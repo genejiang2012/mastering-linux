@@ -1,0 +1,318 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Linux常用命令 &mdash; mastering-linux 0.0.1 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript">
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'../',
+              VERSION:'0.0.1',
+              LANGUAGE:'zh',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="prev" title="Linux的基础知识" href="01-Linux-intro.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> mastering-linux
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="01-Linux-intro.html">Linux的基础知识</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Linux常用命令</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">更改用户和密码</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rpm">rpm</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">语法</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">选项</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">参数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eample">Eample</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">mastering-linux</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Linux常用命令</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/basic/02-Linux-commands.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="linux">
+<h1>Linux常用命令<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h1>
+<p>[TOC]</p>
+<div class="section" id="id1">
+<h2>更改用户和密码<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">su</span> <span class="n">root</span>
+<span class="n">passwd</span>
+</pre></div>
+</div>
+<p>查看进程的命令 - Top
+++++++++++++++++++++++++++++</p>
+<ul class="simple">
+<li>使用权限：所有使用者</li>
+<li>使用方式：<code class="docutils literal notranslate"><span class="pre">top</span> <span class="pre">[-]</span> <span class="pre">[d</span> <span class="pre">delay]</span> <span class="pre">[q]</span> <span class="pre">[c]</span> <span class="pre">[S]</span> <span class="pre">[s]</span> <span class="pre">[i]</span> <span class="pre">[n]</span> <span class="pre">[b]</span></code></li>
+<li>说明：实时显示 process 的动态</li>
+<li>参数：<ul>
+<li>d : 改变显示的更新速度，或是在交谈式指令列( interactive command)按 s</li>
+<li>q : 没有任何延迟的显示速度，如果使用者是有 superuser 的权限，则 top 将会以最高的优先序执行</li>
+<li>c : 切换显示模式，共有两种模式，一是只显示执行档的名称，另一种是显示完整的路径与名称S : 累积模式，会将己完成或消失的子行程 ( dead child process ) 的 CPU time 累积起来</li>
+<li>s : 安全模式，将交谈式指令取消, 避免潜在的危机</li>
+<li>i : 不显示任何闲置 (idle) 或无用 (zombie) 的行程</li>
+<li>n : 更新的次数，完成后将会退出 top</li>
+<li>b : 批次档模式，搭配 &quot;n&quot; 参数一起使用，可以用来将 top 的结果输出到档案内</li>
+</ul>
+</li>
+<li>范例：<ul>
+<li>显示更新十次后退出 ;<ul>
+<li><code class="docutils literal notranslate"><span class="pre">top</span> <span class="pre">-n</span> <span class="pre">10</span></code></li>
+</ul>
+</li>
+<li>使用者将不能利用交谈式指令来对行程下命令 :         - top -s</li>
+<li>将更新显示二次的结果输入到名称为 top.log 的档案里 :<ul>
+<li>top -n 2 -b &lt; top.log</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>运行top命令之后，如果想退出该命令，键入q即可或按ctrl c</p>
+<p>安装
+++++++++++++++++++++++++++</p>
+<div class="section" id="rpm">
+<h3>rpm<a class="headerlink" href="#rpm" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id2">
+<h4>语法<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rpm</span> <span class="p">(</span><span class="n">选项</span><span class="p">)</span> <span class="p">(</span><span class="n">参数</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h4>选项<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h4>
+<ul class="simple">
+<li>a：查询所有套件；</li>
+<li>b&lt;完成阶段&gt;&lt;套件档&gt;+或-t &lt;完成阶段&gt;&lt;套件档&gt;+：设置包装套件的完成阶段，并指定套件档的文件名称；</li>
+<li>c：只列出组态配置文件，本参数需配合&quot;-l&quot;参数使用；</li>
+<li>d：只列出文本文件，本参数需配合&quot;-l&quot;参数使用；</li>
+<li>e&lt;套件档&gt;或--erase&lt;套件档&gt;：删除指定的套件；</li>
+<li>f&lt;文件&gt;+：查询拥有指定文件的套件；</li>
+<li>h或--hash：套件安装时列出标记；</li>
+<li>i：显示套件的相关信息；</li>
+<li>i&lt;套件档&gt;或--install&lt;套件档&gt;：安装指定的套件档；</li>
+<li>l：显示套件的文件列表；</li>
+<li>p&lt;套件档&gt;+：查询指定的RPM套件档；</li>
+<li>q：使用询问模式，当遇到任何问题时，rpm指令会先询问用户；</li>
+<li>R：显示套件的关联性信息；</li>
+<li>s：显示文件状态，本参数需配合&quot;-l&quot;参数使用；</li>
+<li>U&lt;套件档&gt;或--upgrade&lt;套件档&gt;：升级指定的套件档；</li>
+<li>v：显示指令执行过程；</li>
+<li>vv：详细显示指令执行过程，便于排错。</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h4>参数<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h4>
+<ul class="simple">
+<li>软件包：指定要操纵的rpm软件包。</li>
+</ul>
+</div>
+<div class="section" id="eample">
+<h4>Eample<a class="headerlink" href="#eample" title="永久链接至标题">¶</a></h4>
+<div class="section" id="id5">
+<h5>安装软件包<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h5>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rpm</span> <span class="o">-</span><span class="n">ivh</span> <span class="n">xxx</span><span class="o">.</span><span class="n">exe</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h5>卸载软件包<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h5>
+<p>使用命令rpm -e包名，包名可以包含版本号等信息，<strong>==但是不可以有后缀.rpm==</strong>，比如卸载软件包proftpd-1.2.8-1</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rpm</span> <span class="o">-</span><span class="n">e</span> <span class="n">proftpd</span><span class="o">-</span><span class="mf">1.2</span><span class="o">.</span><span class="mi">8</span><span class="o">-</span><span class="mi">1</span>
+<span class="n">rpm</span> <span class="o">-</span><span class="n">e</span> <span class="n">proftpd</span><span class="o">-</span><span class="mf">1.2</span><span class="o">.</span><span class="mi">8</span>
+<span class="n">rpm</span> <span class="o">-</span><span class="n">e</span> <span class="n">proftpd</span><span class="o">-</span>
+<span class="n">rpm</span> <span class="o">-</span><span class="n">e</span> <span class="n">proftpd</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="01-Linux-intro.html" class="btn btn-neutral float-left" title="Linux的基础知识" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, GeneJiang
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
